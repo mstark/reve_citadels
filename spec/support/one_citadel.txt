@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Date: Wed, 28 Sep 2016 20:27:54 GMT
+Server: Apache/2.4.18 (Ubuntu)
+strict-transport-security: max-age=600
+Expires: Wed, 28 Sep 2016 20:37:54 GMT
+Vary: Accept-Encoding
+Cache-Control: max-age=600
+X-Frame-Options: SAMEORIGIN
+Last-Modified: Wed, 28 Sep 2016 20:27:54 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{"1021257423043": {"typeId": 35832, "systemId": 30002642, "name": "Iyen-Oursta - Ministry of Citadels", "typeName": "Astrahus", "lastSeen": "2016-09-13T13:34:22Z", "systemName": "Iyen-Oursta", "regionId": 10000032, "firstSeen": "2016-09-04T01:30:59Z", "regionName": "Sinq Laison"}}
