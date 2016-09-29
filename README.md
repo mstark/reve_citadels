@@ -1,5 +1,6 @@
 # ReveCitadels
 
+[![Build Status](https://travis-ci.org/mstark/reve_citadels.svg?branch=master)](https://travis-ci.org/mstark/reve_citadels)
 
 ## Installation
 
@@ -19,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+
+# get one specific citadel by id
+citadel = ReveCitadels::Citadel.find("1021257423043")
+
+puts citadel.name
+
+=> Iyen-Oursta - Ministry of Citadels
+
+
+# get all known citadels
+citadels = ReveCitadels::Citadel.all
+
+puts citadels.size
+
+=> 2121
+
+```
 
 ## Development
 

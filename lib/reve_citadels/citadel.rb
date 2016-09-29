@@ -7,7 +7,7 @@ module ReveCitadels
       convert_from_response(citadel)
     end
 
-    # returns all known citadels
+    # returns all known citadels in an array
     def self.all
       citadels = Request.new.all
 
