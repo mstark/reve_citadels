@@ -7,12 +7,12 @@ module ReveCitadels
 
     def all
       set_base_uri
-      self.class.get("/all")
+      self.class.get("/all", verify: false)
     end
 
     def find(id)
       set_base_uri
-      self.class.get("/#{id}")
+      self.class.get("/#{id}", verify: false)
     end
 
     private
