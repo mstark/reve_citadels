@@ -21,8 +21,6 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
-    - name: Install system dependencies
-      run: sudo apt-get install libsqlite3-dev
     - name: Install Ruby
       run: |
         eval "$(rbenv init -)"
