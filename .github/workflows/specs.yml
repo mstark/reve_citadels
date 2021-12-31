@@ -1,0 +1,36 @@
+name: Specs
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: masa-iwasaki/setup-rbenv@v1
+    - name: Cache RBENV_ROOT
+      uses: actions/cache@preview
+      id: cache_rbenv
+      with:
+        path: /home/runner/.rbenv
+        key: ${{ runner.os }}-rbenv
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gem-
+    - name: Install system dependencies
+      run: sudo apt-get install libsqlite3-dev
+    - name: Install Ruby
+      run: |
+        eval "$(rbenv init -)"
+        rbenv install -s `cat .ruby-version`
+    - name: Build and test with Rspec
+      run: |
+        eval "$(rbenv init -)"
+        bundle config path vendor/bundle
+        gem install bundler -v `awk '/BUNDLED/ {getline; print $1}' Gemfile.lock` -N
+        bundle install --jobs 4 --retry 3
+        bundle exec rspec

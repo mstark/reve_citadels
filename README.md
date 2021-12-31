@@ -1,7 +1,5 @@
 # ReveCitadels
 
-[![Build Status](https://travis-ci.org/mstark/reve_citadels.svg?branch=master)](https://travis-ci.org/mstark/reve_citadels)
-
 ## Installation
 
 Add this line to your application's Gemfile:
